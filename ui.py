@@ -49,8 +49,8 @@ class View(QWidget):
         self.resize(256, 256)  
         self.show()          
         
-    def activateMessage(self):   # 버튼 클릭할 때 동작하는 함수 : 메시지 박스 출력        
-        self.te1.appendPlainText("Button clicked!") 
+    def activateMessage(self, text):   # 버튼 클릭할 때 동작하는 함수 : 메시지 박스 출력        
+        self.te1.appendPlainText(text) 
     
     def clearMessage(self):  # 버튼2 핸들러 함수 정의 
         self.te1.clear()
