@@ -16,6 +16,8 @@ class View(QWidget):
         
         self.le1 = QLineEdit('0', self)     # 라인 에디트1 추가 
         self.le1.setAlignment(QtCore.Qt.AlignRight) 
+        self.le1.setFocus(True) # 포커스 설정 
+        self.le1.selectAll() # 텍스트 전체 선택 
         
         self.le2 = QLineEdit('0', self)     # 라인 에디트2 추가 
         self.le2.setAlignment(QtCore.Qt.AlignRight)
@@ -28,9 +30,9 @@ class View(QWidget):
         hbox_formular.addWidget(self.cb)
         hbox_formular.addWidget(self.le2)
         
-        self.btn1 = QPushButton('Message', self)    # 버튼 추가 
+        self.btn1 = QPushButton('Calc', self)    # 버튼 이름 변경  
         self.btn2 = QPushButton('Clear', self)  # 버튼2 추가 
-               
+                   
         hbox = QHBoxLayout()    # 수평 박스 레이아웃을 추가하고 버튼1, 2 추가 
         hbox.addStretch(1)  # 공백
         hbox.addWidget(self.btn1)   # 버튼1 배치 
@@ -49,7 +51,7 @@ class View(QWidget):
         self.resize(256, 256)  
         self.show()          
         
-    def activateMessage(self):   # 버튼 클릭할 때 동작하는 함수 : 메시지 박스 출력        
+    def setDisplay(self):   # 버튼 클릭할 때 동작하는 함수 : 메시지 박스 출력        
         self.te1.appendPlainText("Button clicked!") 
     
     def clearMessage(self):  # 버튼2 핸들러 함수 정의 
